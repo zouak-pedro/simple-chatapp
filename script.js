@@ -4,7 +4,7 @@ const messageInput = document.getElementById("message");
 const sendButton = document.getElementById("send");
 const username = prompt("Enter your name.");
 
-let mymessage = "";
+let mymessage = ""; // I will store the message of this session to manipulate chat color
 // Check if user entered a valid name to chat, if not it will reload the page.
 if (!username || username.trim() === "") {
   alert("You need to enter valid name, To Start chat.");
