@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #98d8ef;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+h1 {
+  text-align: center;
+}
+main {
+  width: 400px;
+  min-height: 100vh;
+  background-color: #c4d9ff;
+}
+#chat {
+  background-color: #e8f9ff;
+  min-height: 40vh;
+  padding: 10px 20px;
+}
+input {
+  font-size: 16px;
+  height: 25px;
+  padding: 2px 5px;
+  margin: 5px 5px 20px 20px;
+  border-radius: 8px;
+  width: 70%;
+}
+button {
+  background-color: #c4d9ff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: solid 1px;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+.myMessage {
+  color: #3e7b27;
+}
+.receivedMessage {
+  color: #f93827;
+}

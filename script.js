@@ -4,6 +4,7 @@ const messageInput = document.getElementById("message");
 const sendButton = document.getElementById("send");
 const username = prompt("Enter your name.");
 
+let mymessage = "";
 // Check if user entered a valid name to chat, if not it will reload the page.
 if (!username || username.trim() === "") {
   alert("You need to enter valid name, To Start chat.");
@@ -22,12 +23,18 @@ ws.onmessage = async (event) => {
 
   const message = document.createElement("div");
   message.textContent = messageContent;
+  if (mymessage === messageContent) {
+    message.classList.add("myMessage");
+  } else {
+    message.classList.add("receivedMessage");
+  }
   chat.appendChild(message);
 };
 // to send message whan the user click send button
 sendButton.addEventListener("click", () => {
   let message = messageInput.value.trim();
   if (username && message) {
+    mymessage = `${username}: ${message}`;
     ws.send(`${username}: ${message}`);
     messageInput.value = "";
   }
@@ -37,6 +44,7 @@ document.addEventListener("keyup", (key) => {
   let message = messageInput.value.trim();
   if (key.code === "Enter") {
     if (username && message) {
+      mymessage = `${username}: ${message}`;
       ws.send(`${username}: ${message}`);
       messageInput.value = "";
     }
